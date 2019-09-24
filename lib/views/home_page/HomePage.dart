@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'RadiusPage.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -16,16 +17,16 @@ class _HomePageState extends State<HomePage> {
 }
 
 Widget _buildListView() {
-  List<String> listTitle = ['百度地图', '其他'];
   return new ListView.separated(
-      itemBuilder: (context, item) {
-        return buildListViewData(context,listTitle[item]);
+      itemBuilder: (context, index) {
+        return buildListViewData(context, routerName[index],index);
       },
       separatorBuilder: (BuildContext context, int index) => new Divider(),
-      itemCount: listTitle.length);
+      itemCount: routerName.length);
 }
 
-Widget buildListViewData(BuildContext context, String titleItem) {
+Widget buildListViewData(
+    BuildContext context, String titleItem, int index) {
   return ListTile(
     title: Text(
       titleItem,
@@ -33,7 +34,18 @@ Widget buildListViewData(BuildContext context, String titleItem) {
     ),
     trailing: Icon(Icons.keyboard_arrow_right),
     onTap: () {
-//      Navigator.push(context,  MaterialPageRoute(builder: (context) => BaiduMapPage()));
+      routerPage(index,context);
     },
   );
 }
+
+const List<String> routerName = ["圆角"];
+
+void routerPage(int index,BuildContext context){
+  switch(index){
+    case 0:
+      Navigator.push(context,MaterialPageRoute(builder: (context) => new RadiusPage()),
+      );
+  }
+}
+
