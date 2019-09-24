@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'radius_page.dart';
 import 'transform_page.dart';
 import 'text_line_height_page.dart';
+import 'positioned_page.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -41,7 +42,7 @@ Widget buildListViewData(
   );
 }
 
-const List<String> routerName = ["圆角","Transform","文本间距"];
+const List<String> routerName = ["圆角","Transform Demo","文本间距","Positioned Demo"];
 
 void routerPage(int index,BuildContext context){
   switch(index){
@@ -55,6 +56,10 @@ void routerPage(int index,BuildContext context){
       break;
     case 2:
       Navigator.push(context,MaterialPageRoute(builder: (context) => new TextLineHeightPage()),
+      );
+      break;
+    case 3:
+      Navigator.push(context,MaterialPageRoute(builder: (context) => new PositionedPage()),
       );
       break;
   }

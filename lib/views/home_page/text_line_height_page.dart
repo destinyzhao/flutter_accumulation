@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TextLineHeightPage extends StatelessWidget{
   final double leading = 0.9;
-  final double textLineHeight = 2;
+  final double textLineHeight = 2; /// 文本间距
   final double fontSize = 16;
 
   @override
@@ -14,6 +14,7 @@ class TextLineHeightPage extends StatelessWidget{
       ),
       body: Container(
         margin: EdgeInsets.all(20),
+        ///利用 Transform 偏移将对应权重部分位置
         child: Transform.translate(
           offset: Offset(0, fontSize * leading / 2),
           child: Text(
