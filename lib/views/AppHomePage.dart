@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_accumulation/views/home_page/HomePage.dart';
+import 'package:flutter_accumulation/views/home_page/home_page.dart';
 import 'package:flutter_accumulation/views/setting_page/SettingPage.dart';
 
 class AppHomePage extends StatefulWidget{

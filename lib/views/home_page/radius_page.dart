@@ -7,6 +7,7 @@ class RadiusPage extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         title: Text('圆角Demo'),
+          backgroundColor: Colors.blue[400]
       ),
       body: Container(
         alignment: Alignment.center,
