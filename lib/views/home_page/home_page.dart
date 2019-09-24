@@ -3,6 +3,7 @@ import 'radius_page.dart';
 import 'transform_page.dart';
 import 'text_line_height_page.dart';
 import 'positioned_page.dart';
+import 'stack_page.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -42,7 +43,7 @@ Widget buildListViewData(
   );
 }
 
-const List<String> routerName = ["圆角","Transform Demo","文本间距","Positioned Demo"];
+const List<String> routerName = ["圆角","Transform Demo","文本间距","Positioned Demo","Stack Demo"];
 
 void routerPage(int index,BuildContext context){
   switch(index){
@@ -60,6 +61,10 @@ void routerPage(int index,BuildContext context){
       break;
     case 3:
       Navigator.push(context,MaterialPageRoute(builder: (context) => new PositionedPage()),
+      );
+      break;
+    case 4:
+      Navigator.push(context,MaterialPageRoute(builder: (context) => new StackPage()),
       );
       break;
   }
