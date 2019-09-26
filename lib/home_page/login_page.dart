@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -200,7 +201,15 @@ class _LoginPageState extends State<LoginPage> {
       height: 40,
       child:  RaisedButton(
         onPressed: () {
-          checkInput();
+          if(checkInput()){
+            Fluttertoast.showToast(
+                msg: "登录成功",
+                gravity: ToastGravity.CENTER,
+                timeInSecForIos: 2,
+                textColor: Colors.white,
+                fontSize: 14.0
+            );
+          }
         },
         child: Text("登录"),
         color: Colors.blue[400],
@@ -214,14 +223,25 @@ class _LoginPageState extends State<LoginPage> {
 
   bool checkInput(){
     if(_userNameEditController.text.length == 0){
-//      showToast(
-//        "请输入用户名",
-//        textStyle: TextStyle(fontSize: 14.0),
-//      );
+
+      Fluttertoast.showToast(
+          msg: "请输入用户名",
+          gravity: ToastGravity.CENTER,
+          timeInSecForIos: 2,
+          textColor: Colors.white,
+          fontSize: 14.0
+      );
+
       return false;
     }
     else if (_pwdEditController.text.length == 0){
-//      showToast("请输入用户名");
+      Fluttertoast.showToast(
+          msg: "请输入密码",
+          gravity: ToastGravity.CENTER,
+          timeInSecForIos: 2,
+          textColor: Colors.white,
+          fontSize: 14.0
+      );
       return false;
     }
 
