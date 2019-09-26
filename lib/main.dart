@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_accumulation/views/AppHomePage.dart';
+import 'AppHomePage.dart';
 
 void main(){
   runApp(new MyApp());
