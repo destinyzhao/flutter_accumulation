@@ -6,6 +6,8 @@ import 'positioned_page.dart';
 import 'stack_page.dart';
 import 'wrap_page.dart';
 import 'login_page.dart';
+import 'layout_page_one.dart';
+import 'list_view_page.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -25,14 +27,13 @@ class _HomePageState extends State<HomePage> {
 Widget _buildListView() {
   return new ListView.separated(
       itemBuilder: (context, index) {
-        return buildListViewData(context, routerName[index],index);
+        return buildListViewData(context, routerName[index], index);
       },
       separatorBuilder: (BuildContext context, int index) => new Divider(),
       itemCount: routerName.length);
 }
 
-Widget buildListViewData(
-    BuildContext context, String titleItem, int index) {
+Widget buildListViewData(BuildContext context, String titleItem, int index) {
   return ListTile(
     title: Text(
       titleItem,
@@ -40,44 +41,78 @@ Widget buildListViewData(
     ),
     trailing: Icon(Icons.keyboard_arrow_right),
     onTap: () {
-      routerPage(index,context);
+      routerPage(index, context);
     },
   );
 }
 
-const List<String> routerName = ["圆角","Transform Demo","文本间距","Positioned Demo",
-  "Stack Demo","Wrap Demo","登录"];
+const List<String> routerName = [
+  "圆角",
+  "Transform Demo",
+  "文本间距",
+  "Positioned Demo",
+  "Stack Demo",
+  "Wrap Demo",
+  "登录",
+  "布局-",
+  "ListView"
+];
 
-void routerPage(int index,BuildContext context){
-  switch(index){
+void routerPage(int index, BuildContext context) {
+  switch (index) {
     case 0:
-      Navigator.push(context,MaterialPageRoute(builder: (context) => new RadiusPage()),
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => new RadiusPage()),
       );
       break;
     case 1:
-      Navigator.push(context,MaterialPageRoute(builder: (context) => new TransformPage()),
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => new TransformPage()),
       );
       break;
     case 2:
-      Navigator.push(context,MaterialPageRoute(builder: (context) => new TextLineHeightPage()),
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => new TextLineHeightPage()),
       );
       break;
     case 3:
-      Navigator.push(context,MaterialPageRoute(builder: (context) => new PositionedPage()),
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => new PositionedPage()),
       );
       break;
     case 4:
-      Navigator.push(context,MaterialPageRoute(builder: (context) => new StackPage()),
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => new StackPage()),
       );
       break;
     case 5:
-      Navigator.push(context,MaterialPageRoute(builder: (context) => new WrapPage()),
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => new WrapPage()),
       );
       break;
     case 6:
-      Navigator.push(context,MaterialPageRoute(builder: (context) => new LoginPage()),
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => new LoginPage()),
+      );
+      break;
+    case 7:
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => new LayoutPageOne()),
+      );
+      break;
+    case 8:
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => new ListViewPage()),
       );
       break;
   }
 }
-
