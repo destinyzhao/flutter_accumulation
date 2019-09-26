@@ -40,9 +40,7 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             buildTopWidget(context),
-            SizedBox(
-              height: 80,
-            ),
+            SizedBox(height: 80),
             buildEditWidget(context),
             buildLoginButton()
           ],
@@ -90,6 +88,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  /// 输入框
   Widget buildEditWidget(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 15, right: 15),
@@ -103,6 +102,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  /// 用户名
   Widget buildLoginNameTextField() {
     return Container(
       height: 40,
@@ -148,6 +148,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  /// 密码
   Widget buildPwdTextField() {
     return Container(
         height: 40,
@@ -193,6 +194,7 @@ class _LoginPageState extends State<LoginPage> {
         ));
   }
 
+  /// 登录按钮
   Widget buildLoginButton(){
     return Container(
       margin: EdgeInsets.only(top: 40,left: 10,right: 10),
